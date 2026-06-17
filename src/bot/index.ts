@@ -6,6 +6,8 @@ if (!BOT_TOKEN) throw new Error("TELEGRAM_BOT_TOKEN is not set");
 
 export const bot = new Telegraf(BOT_TOKEN);
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://arabictest.uz";
+
 bot.start((ctx) => {
   const name = ctx.from.first_name || "Foydalanuvchi";
   ctx.reply(
@@ -27,8 +29,8 @@ bot.action(/plan_(.+)/, (ctx) => {
     return ctx.reply(
       "✅ Bepul tarif tanlandi!\n\n"
       + "Siz 2 ta test topshirishingiz mumkin.\n"
-      + "👉 https://arabictest.uz/cefr",
-      Markup.inlineKeyboard([Markup.button.webApp("Testni boshlash", "https://arabictest.uz/cefr")])
+      + `👉 ${SITE_URL}/cefr`,
+      Markup.inlineKeyboard([Markup.button.webApp("Testni boshlash", `${SITE_URL}/cefr`)])
     );
   }
 
@@ -38,7 +40,7 @@ bot.action(/plan_(.+)/, (ctx) => {
     + `To'lov summasi: ${formatPrice(plan.price)}\n\n`
     + `💳 Karta raqami: \`${CARD_NUMBER}\`\n`
     + `👤 Karta egasi: ${CARD_HOLDER}\n\n`
-    + `To'lovni amalga oshirgandan so'ng, quyidagi tugmani bosing yoki to'lov ID sini admin@arabictest ga yuboring:\n\n`
+    + `To'lovni amalga oshirgandan so'ng, quyidagi tugmani bosing:\n\n`
     + `To'lov ID: \`${paymentId}\``,
     {
       parse_mode: "Markdown",
@@ -58,7 +60,7 @@ bot.action(/confirm_(.+)/, (ctx) => {
     "✅ So'rovingiz qabul qilindi!\n\n"
     + "Admin to'lovni tekshirib, hisobingizni faollashtiradi.\n"
     + "Bu biroz vaqt olishi mumkin (5-10 daqiqa).",
-    Markup.inlineKeyboard([Markup.button.url("🌐 Saytga kirish", "https://arabictest.uz")])
+    Markup.inlineKeyboard([Markup.button.url("🌐 Saytga kirish", SITE_URL)])
   );
   if (ADMIN_CHAT_ID) {
     ctx.telegram.sendMessage(
@@ -80,7 +82,7 @@ bot.help((ctx) => {
     + "/start - Tariflarni ko'rish\n"
     + "/plans - Narxlar\n"
     + "/help - Yordam\n\n"
-    + "🌐 Sayt: https://arabictest.uz"
+    + `🌐 Sayt: ${SITE_URL}`
   );
 });
 
@@ -94,12 +96,3 @@ bot.command("plans", (ctx) => {
     { parse_mode: "Markdown" }
   );
 });
-
-export async function startBot() {
-  try {
-    await bot.launch();
-    console.log("🤖 Telegram bot started");
-  } catch (error) {
-    console.error("Failed to start Telegram bot:", error);
-  }
-}

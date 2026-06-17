@@ -1,4 +1,7 @@
 import "dotenv/config";
-import { startBot } from "../src/bot/index";
+import { bot } from "../src/bot/index";
 
-startBot().catch(console.error);
+bot.launch().then(() => console.log("🤖 Telegram bot started"));
+
+process.once("SIGINT", () => bot.stop("SIGINT"));
+process.once("SIGTERM", () => bot.stop("SIGTERM"));
