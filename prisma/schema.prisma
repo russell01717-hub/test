@@ -21,6 +21,7 @@ model User {
   accounts Account[]
   sessions Session[]
   results  TestResult[]
+  payments Payment[]
 }
 
 model Account {
@@ -48,6 +49,21 @@ model Session {
   userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Payment {
+  id        String   @id @default(cuid())
+  userId    String
+  planId    String
+  amount    Int
+  paymentId String   @unique
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([status])
 }
 
 model TestResult {
