@@ -15,6 +15,7 @@ export default function RegisterPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
@@ -32,11 +33,28 @@ export default function RegisterPage() {
         throw new Error(data.error || "Xatolik yuz berdi");
       }
       await signIn("credentials", { email, password, redirect: false });
-      router.push("/dashboard");
+      setSuccess(true);
+      setTimeout(() => router.push("/dashboard"), 1000);
     } catch (err: any) {
       setError(err.message);
       setLoading(false);
     }
+  }
+
+  if (success) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 to-purple-500/5 p-4">
+        <Card className="w-full max-w-md animate-scale-in text-center">
+          <CardContent className="py-12">
+            <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+            </div>
+            <h2 className="text-2xl font-bold mb-2">Ro'yxatdan o'tildi! ✅</h2>
+            <p className="text-muted-foreground">Dashboardga o'tkazilmoqda...</p>
+          </CardContent>
+        </Card>
+      </div>
+    );
   }
 
   return (
