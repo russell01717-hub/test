@@ -10,9 +10,9 @@ export default function Home() {
       <LiquidNav />
 
       <section className="relative overflow-hidden py-20 md:py-32">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-primary/10 to-purple-500/5" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 via-teal-400/10 to-amber-500/5" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl" />
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl mx-auto text-center space-y-8">
             <Badge variant="secondary" className="px-4 py-1.5 text-sm animate-fade-in">AI Texnologiyasi asosida baholash</Badge>

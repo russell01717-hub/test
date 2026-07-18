@@ -26,7 +26,7 @@ export default function AttanalPage() {
       <section className="flex-1 py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-purple-600 text-white">At-tanal al-arobi</Badge>
+            <Badge className="mb-4 bg-teal-600 text-white">At-tanal al-arobi</Badge>
             <h1 className="text-3xl md:text-5xl font-bold mb-4">At-tanal al-arobi bo'yicha baholash</h1>
             <p className="text-muted-foreground text-lg">Xalqaro standart bo'yicha o'z darajangizni aniqlang</p>
           </div>
@@ -35,7 +35,7 @@ export default function AttanalPage() {
               <Link key={s.id} href={`/attanal/${s.id}`}>
                 <Card className="group cursor-pointer hover:shadow-xl transition-all duration-300 h-full animate-fade-in" style={{ animationDelay: `${i * 0.1}s` }}>
                   <CardHeader>
-                    <div className="w-10 h-10 rounded-lg bg-purple-600 flex items-center justify-center mb-2">
+                    <div className="w-10 h-10 rounded-lg bg-teal-600 flex items-center justify-center mb-2">
                       <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={s.icon} /></svg>
                     </div>
                     <CardTitle className="text-xl">{s.title}</CardTitle>

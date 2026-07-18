@@ -30,7 +30,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 to-purple-500/5 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-teal-500/5 to-amber-500/5 p-4">
       <Card className="w-full max-w-md animate-scale-in">
         <CardHeader className="text-center">
           <Link href="/" className="flex items-center justify-center gap-2 mb-4">

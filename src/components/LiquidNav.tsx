@@ -77,10 +77,10 @@ export function LiquidNav() {
 
       <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2 z-10">
-          <div className="h-8 w-8 rounded-lg flex items-center justify-center" style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}>
+          <div className="h-8 w-8 rounded-lg flex items-center justify-center" style={{ background: "linear-gradient(135deg, #0D9488, #14B8A6)" }}>
             <span className="text-white font-bold text-sm">ع</span>
           </div>
-          <span className="font-bold text-xl" style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+          <span className="font-bold text-xl" style={{ background: "linear-gradient(135deg, #0D9488, #14B8A6, #2DD4BF)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
             ARABICTEST.UZ
           </span>
         </Link>
@@ -142,7 +142,7 @@ export function LiquidNav() {
           {mounted ? (
             <>
               <Link href="/auth/login" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Kirish</Link>
-              <Link href="/auth/register" className="inline-flex items-center justify-center rounded-lg text-sm font-medium transition-colors h-9 px-4 py-2 text-white" style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}>
+              <Link href="/auth/register" className="inline-flex items-center justify-center rounded-lg text-sm font-medium transition-colors h-9 px-4 py-2 text-white" style={{ background: "linear-gradient(135deg, #0D9488, #14B8A6)" }}>
                 Ro'yxatdan o'tish
               </Link>
             </>

@@ -43,13 +43,13 @@ export default function RegisterPage() {
 
   if (success) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 to-purple-500/5 p-4">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-teal-500/5 to-amber-500/5 p-4">
         <Card className="w-full max-w-md animate-scale-in text-center">
           <CardContent className="py-12">
             <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
               <svg className="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
             </div>
-            <h2 className="text-2xl font-bold mb-2">Ro'yxatdan o'tildi! ✅</h2>
+            <h2 className="text-2xl font-bold mb-2">Ro'yxatdan o'tildi!</h2>
             <p className="text-muted-foreground">Dashboardga o'tkazilmoqda...</p>
           </CardContent>
         </Card>
@@ -58,7 +58,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 to-purple-500/5 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-teal-500/5 to-amber-500/5 p-4">
       <Card className="w-full max-w-md animate-scale-in">
         <CardHeader className="text-center">
           <Link href="/" className="flex items-center justify-center gap-2 mb-4">
