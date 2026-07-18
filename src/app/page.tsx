@@ -2,30 +2,12 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { LiquidNav } from "@/components/LiquidNav";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg gradient-bg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">ع</span>
-            </div>
-            <span className="font-bold text-xl gradient-text">ARABICTEST.UZ</span>
-          </Link>
-          <nav className="hidden md:flex items-center gap-6">
-            <Link href="/cefr" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">CEFR</Link>
-            <Link href="/attanal" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">At-tanal al-arobi</Link>
-            <Link href="/leaderboard" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Reyting</Link>
-            <Link href="/pricing" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Narxlar</Link>
-          </nav>
-          <div className="flex items-center gap-3">
-            <Link href="/auth/login"><Button variant="ghost" size="sm">Kirish</Button></Link>
-            <Link href="/auth/register"><Button size="sm">Ro'yxatdan o'tish</Button></Link>
-          </div>
-        </div>
-      </header>
+      <LiquidNav />
 
       <section className="relative overflow-hidden py-20 md:py-32">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-primary/10 to-purple-500/5" />
