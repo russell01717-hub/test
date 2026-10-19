@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: jarvis-telegram-bot
+    env: docker
+    dockerfilePath: Dockerfile
+    branch: jarvis
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        value: 8965534323:AAEZIZ0of-HZ6t3iQSZ_s9zIAp_AdBBcOR4
+      - key: TELEGRAM_API_ID
+        value: 2040
+      - key: TELEGRAM_API_HASH
+        value: b18441a1ff607e10a989891a5462e627
