@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+bot.log
+run_hidden.vbs
+start_bot.bat
+start_login.bat
+deploy_hf.bat
